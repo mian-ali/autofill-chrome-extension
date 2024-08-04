@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Form Filler",
+  "version": "1.0",
+  "description": "Automatically fills forms.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
